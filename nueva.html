@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://localhost:8014/encuesta/retorno-a-clases -->
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ingenieria - USAC - Portal Estudiantil</title>
+  <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+  <link href="./estilos/select2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./estilos/bootstrap.min.css" type="text/css">
+  <link href="./estilos/icons.min.css" rel="stylesheet" type="text/css">
+  <link href="./estilos/app.min.css" rel="stylesheet" type="text/css">
+  <script src="./estilos/fontawesome-all.min.js" charset="utf-8"></script>
+  <script src="./estilos/vue.min.js" charset="utf-8"></script>
+</head>
+
+<body class="topbar-dark">
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <span class="d-none d-sm-block">
+      <img class="mb-3" src="./img/logo_fiusac_negro.png" alt="" width="450">
+    </span>
+    <span class="d-block d-sm-none">
+      <img class="mb-3" src="./img/logo_fiusac_negro.png" alt="" width="300">
+    </span>
+    <h2 class="display-6">
+      Estudio de Campo para diseñar el Plan Piloto para el retorno a clases en<br>
+      Modalidad Virtual, Presencial o Híbrida en el Primer Semestre 2024
+    </h2>
+    <p class="lead">
+      Estimado(a) estudiante(a) de la Facultad de Ingeniería, de la manera más atenta le informamos que Junta Directiva
+      de la
+      Facultad de Ingeniería en el Punto Décimo Quinto, Inciso 15.1, Acta No. 17-2023, de sesión celebrada el día
+      veintidos
+      de agosto de 2023, autorizó realizar el Estudio de Campo para Diseñar el Plan Piloto para el Retorno a Clases en
+      Modalidad
+      Virtual, Presencial o Híbrida a cargo de la Unidad de Modelación Matemática e Investigación -UMMI- y de la Unidad
+      de
+      Análisis de Datos -UAD- de la Escuela de Ciencias.
+    </p>
+    <div class="alert alert-primary" role="alert">
+      Por lo que le agradeceremos responder a las siguientes preguntas, sus respuestas serán de carácter
+      <strong>confidencial</strong>,
+      por lo que agradecemos desde ya su valiosa respuesta.
+    </div>
+  </div>
+  <div class="container">
+    <form class="was-validated" autocomplete="off" id="frm-encuesta"
+      action="https://localhost:8014/encuesta/retorno-a-clases/guardar-respuestas" method="POST"
+      enctype="multipart/form-data">
+      <input type="hidden" class="form-control" name="p-cursos" id="p-cursos" value="">
+      <div class="card">
+        <div class="card-body">
+          <label for="p-carnet">
+            <h5>Registro Académico (Carné):</h5>
+          </label>
+          <input type="text" readonly="" class="form-control-plaintext" id="p-carnet" name="p-carnet" value="202010893">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <label for="p-cui">
+            <h5>CUI:</h5>
+          </label>
+          <input type="text" readonly="" class="form-control-plaintext" id="p-cui" name="p-cui" value="3013484210101">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body col-md-4 col-sm-12">
+          <label for="p-carrera">
+            <h5>Carrera:</h5>
+          </label>
+          <select id="p-carrera" name="p-carrera" class="form-control">
+            <option selected="" value="09-174">09 INGENIERIA EN CIENCIAS Y SISTEMAS (174 créditos)</option>
+            <option value="13-112">13 INGENIERIA ELECTRONICA (112 créditos)</option>
+          </select>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body col-md-4 col-sm-12">
+          <label for="p-semestre">
+            <h5>Semestre más avanzado que cursa:</h5>
+          </label>
+          <select id="p-semestre" name="p-semestre" class="form-control" required="">
+            <option value="">Seleccionar semestre</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5>No. de créditos acumulados:</h5>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="p-creditos-1" name="p-creditos" class="custom-control-input" value="17" required="">
+            <label class="custom-control-label" for="p-creditos-1">Menos de 50</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="p-creditos-2" name="p-creditos" class="custom-control-input" value="18" required="">
+            <label class="custom-control-label" for="p-creditos-2">50 a 100</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="p-creditos-3" name="p-creditos" class="custom-control-input" value="19" required="">
+            <label class="custom-control-label" for="p-creditos-3">101 a 150</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="p-creditos-4" name="p-creditos" class="custom-control-input" value="20" required=""
+              checked="">
+            <label class="custom-control-label" for="p-creditos-4">151 a 200</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="p-creditos-5" name="p-creditos" class="custom-control-input" value="21" required="">
+            <label class="custom-control-label" for="p-creditos-5">201 a 250</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="p-creditos-6" name="p-creditos" class="custom-control-input" value="22" required="">
+            <label class="custom-control-label" for="p-creditos-6">Más de 250</label>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5>Estado civil:</h5>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="p-estado-civil-1" name="p-estado-civil" class="custom-control-input" value="1"
+              required="">
+            <label class="custom-control-label" for="p-estado-civil-1">Soltero</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="p-estado-civil-2" name="p-estado-civil" class="custom-control-input" value="2"
+              required="">
+            <label class="custom-control-label" for="p-estado-civil-2">Casado</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <input type="radio" id="p-estado-civil-3" name="p-estado-civil" class="custom-control-input" value="3"
+              required="">
+            <label class="custom-control-label" for="p-estado-civil-3">Unido</label>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5>Trabaja actualmente:</h5><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="p-trabaja" id="p-trabaja-1" value="1" required="">
+            <label class="form-check-label" for="p-trabaja-1">Si</label>
+          </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="p-trabaja" id="p-trabaja-2" value="0" required="">
+            <label class="form-check-label" for="p-trabaja-2">No</label>
+          </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div id="div-modalidad-trabajo"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body col-md-4 col-sm-12">
+          <label for="p-departamento">
+            <h5>Lugar de residencia:</h5>
+          </label>
+          <select id="p-departamento" name="p-departamento" class="form-control">
+            <option value="1" selected="">
+              GUATEMALA
+            </option>
+            <option value="2">
+              EL PROGRESO
+            </option>
+            <option value="3">
+              SACATEPEQUEZ
+            </option>
+            <option value="4">
+              CHIMALTENANGO
+            </option>
+            <option value="5">
+              ESCUINTLA
+            </option>
+            <option value="6">
+              SANTA ROSA
+            </option>
+            <option value="7">
+              SOLOLA
+            </option>
+            <option value="8">
+              TOTONICAPAN
+            </option>
+            <option value="9">
+              QUETZALTENANGO
+            </option>
+            <option value="10">
+              SUCHITEPEQUEZ
+            </option>
+            <option value="11">
+              RETALHULEU
+            </option>
+            <option value="12">
+              SAN MARCOS
+            </option>
+            <option value="13">
+              HUEHUETENANGO
+            </option>
+            <option value="14">
+              QUICHE
+            </option>
+            <option value="15">
+              BAJA VERAPAZ
+            </option>
+            <option value="16">
+              ALTA VERAPAZ
+            </option>
+            <option value="17">
+              PETEN
+            </option>
+            <option value="18">
+              IZABAL
+            </option>
+            <option value="19">
+              ZACAPA
+            </option>
+            <option value="20">
+              CHIQUIMULA
+            </option>
+            <option value="21">
+              JALAPA
+            </option>
+            <option value="22">
+              JUTIAPA
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5>¿Tiene planeado asignarse cursos el próximo semestre?</h5><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="p-cursos-semestre" id="p-cursos-semestre-1" value="1"
+              required="">
+            <label class="form-check-label" for="p-cursos-semestre-1">Si</label>
+          </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="p-cursos-semestre" id="p-cursos-semestre-2" value="0"
+              required="">
+            <label class="form-check-label" for="p-cursos-semestre-2">No</label>
+          </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+      </div>
+      <div id="div-manual"></div>
+      <div id="div-preguntas"></div>
+    </form>
+  </div>
+
+  <footer class="pt-2 my-md-3 pt-md-3 border-top">
+    <div class="row justify-content-center">
+      <a href="https://localhost:8014/logout" class="btn btn-lg btn-secondary">Salir</a>
+    </div>
+  </footer>
+  <script src="./estilos/jquery-3.7.1.js.descarga"></script>
+  <script src="./estilos/select2.min.js.descarga"></script>
+  <script>
+    let existeMovilidad = false;
+    const CURSOS = [
+      { "codigo": "0028", "configuracion_labs": [{ "tipo": 1, "nombre":       "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "ECOLOGIA", "secciones": [{ "seccion": "A-", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "10:40", "horafinal": "11:30", "dias": "X X X  " }], "personal": "000018318", "nombre_docente": "GERAR RDONE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "N+", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "14:00", "horafinal": "14:50", "dias": "X X X  " }], "personal": "000018318", "nombre_docente": "GERAR RDONE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "O ", "modalidad": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "15:40", "horafinal": "16:30", "dias": "X X X  " }], "personal": "000940311", "nombre_docente": "DAVID ORALE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "P ", "modalidad": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "16:30", "horafinal": "17:20", "dias": "X X X  " }], "personal": "000940311", "nombre_docente": "DAVID ORALE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "Q ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "19:00", "horafinal": "19:50", "dias": "X X X  " }], "personal": "000016606", "nombre_docente": "JAIME NZALE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "0120", "configuracion_labs": [{ "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "MATEMATICA APLICADA 2", "secciones": [{ "seccion": "N ", "modalidad": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "15:40", "horafinal": "16:30", "dias": "X X X  " }], "personal": "000011106", "nombre_docente": "JOSE NASTU", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "0122", "configuracion_labs": [{ "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "MATEMATICA APLICADA 4", "secciones": [{ "seccion": "A ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "08:00", "horafinal": "08:50", "dias": "X X X  " }], "personal": "019990765", "nombre_docente": "CARLO LOPE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "N ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "14:50", "horafinal": "15:40", "dias": "X X X  " }], "personal": "000970308", "nombre_docente": "CARLO TACRU", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "0200", "configuracion_labs": [{ "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }, { "tipo": 2, "nombre": "LABORATORIO                                                                                         ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "INGENIERIA ELECTRICA 1", "secciones": [{ "seccion": "N3", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "15:40", "horafinal": "16:30", "dias": "X X X  " }], "personal": "000010171", "nombre_docente": "FRANC LOPE", "mod_lab": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "mod_practica": null, "mod_trabajo": null }, { "seccion": "Q+", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "17:20", "horafinal": "18:10", "dias": "X X X  " }], "personal": "000010171", "nombre_docente": "FRANC LOPE", "mod_lab": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "mod_practica": null, "mod_trabajo": null }, { "seccion": "R+", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "18:10", "horafinal": "19:00", "dias": "X X X  " }], "personal": "020090113", "nombre_docente": "JORGE ADILL", "mod_lab": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "mod_practica": null, "mod_trabajo": null }, { "seccion": "R-", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "18:10", "horafinal": "19:00", "dias": "X X X  " }], "personal": "000010171", "nombre_docente": "FRANC LOPE", "mod_lab": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": [{ "codigo": "0200", "tipo": 2, "nombreTipo": "LABORATORIO", "secciones": [{ "seccion": "_K", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "17:20", "horafinal": "19:00", "dias": " X     " }], "personal": "020130940", "nombre_docente": "BRIAN ORALE" }, { "seccion": "_L", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "17:20", "horafinal": "19:00", "dias": "   X   " }], "personal": "020130940", "nombre_docente": "BRIAN ORALE" }, { "seccion": "_M", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "19:00", "horafinal": "20:40", "dias": " X     " }], "personal": "020130940", "nombre_docente": "BRIAN ORALE" }, { "seccion": "MI", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "08:00", "horafinal": "12:10", "dias": " X     " }], "personal": "020090113", "nombre_docente": "JORGE ADILL" }, { "seccion": "_N", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "18:10", "horafinal": "19:50", "dias": " X     " }], "personal": "020030919", "nombre_docente": "BAYRO ULAJA" }, { "seccion": "_O", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "19:00", "horafinal": "20:40", "dias": "   X   " }], "personal": "020030919", "nombre_docente": "BAYRO ULAJA" }, { "seccion": "_P", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "08:50", "horafinal": "10:30", "dias": "     X " }], "personal": "020130940", "nombre_docente": "BRIAN ORALE" }, { "seccion": "_Q", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "10:30", "horafinal": "12:10", "dias": "     X " }], "personal": "020130940", "nombre_docente": "BRIAN ORALE" }], "misma_seccion_labs": 0, "misma_letra_inicial_labs": 0 }] }, { "codigo": "0283", "configuracion_labs": [{ "tipo": 2, "nombre": "LABORATORIO                                                                                         ", "tipo_docente": 0 }, { "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "ANALISIS Y DISE\\O DE SISTEMAS 1", "secciones": [{ "seccion": "B ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "07:10", "horafinal": "12:10", "dias": "     X " }], "personal": "000970169", "nombre_docente": "EDGAR OBLED", "mod_lab": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": [{ "codigo": "0283", "tipo": 2, "nombreTipo": "LABORATORIO", "secciones": [{ "seccion": "B ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "12:10", "horafinal": "13:50", "dias": "     X " }], "personal": "990013580", "nombre_docente": null }], "misma_seccion_labs": 1, "misma_letra_inicial_labs": 0 }] }, { "codigo": "0288", "configuracion_labs": [{ "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "INTROD AL ESTUDIO DE IMPACTO AMBIENTAL", "secciones": [{ "seccion": "M ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "16:30", "horafinal": "17:20", "dias": "X X X  " }], "personal": "020120068", "nombre_docente": "PABLO OLARE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "N ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "19:50", "horafinal": "20:40", "dias": "X X X  " }], "personal": "000970724", "nombre_docente": "RAFAE OCHO", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "0650", "configuracion_labs": [{ "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }, { "tipo": 5, "nombre": "PRACTICA                                                                                            ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "CONTABILIDAD 1", "secciones": [{ "seccion": "A ", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "08:00", "horafinal": "08:50", "dias": " X X   " }], "personal": "020100418", "nombre_docente": "ELMER HOCOO", "mod_lab": null, "mod_practica": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "mod_trabajo": null }, { "seccion": "P+", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "16:30", "horafinal": "17:20", "dias": " X X   " }], "personal": "020010766", "nombre_docente": "EDWIN REYE", "mod_lab": null, "mod_practica": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": [{ "codigo": "0650", "tipo": 5, "nombreTipo": "PRACTICA", "secciones": [{ "seccion": "A ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "08:50", "horafinal": "10:30", "dias": "     X " }], "personal": "020190900", "nombre_docente": "OWEN RIVER" }, { "seccion": "P+", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "10:30", "horafinal": "12:10", "dias": "     X " }], "personal": "020190900", "nombre_docente": "OWEN RIVER" }, { "seccion": "P-", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "10:30", "horafinal": "12:10", "dias": "     X " }], "personal": "020190900", "nombre_docente": "OWEN RIVER" }], "misma_seccion_labs": 1, "misma_letra_inicial_labs": 0 }] }, { "codigo": "0652", "configuracion_labs": [{ "tipo": 5, "nombre": "PRACTICA                                                                                            ", "tipo_docente": 0 }, { "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "CONTABILIDAD 2", "secciones": [{ "seccion": "A ", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "07:10", "horafinal": "08:00", "dias": " X X   " }], "personal": "020100418", "nombre_docente": "ELMER HOCOO", "mod_lab": null, "mod_practica": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "mod_trabajo": null }, { "seccion": "N-", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "19:00", "horafinal": "19:50", "dias": " X X   " }], "personal": "020100418", "nombre_docente": "ELMER HOCOO", "mod_lab": null, "mod_practica": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "0654", "configuracion_labs": [{ "tipo": 5, "nombre": "PRACTICA                                                                                            ", "tipo_docente": 1 }, { "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "CONTABILIDAD 3", "secciones": [{ "seccion": "A ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "08:00", "horafinal": "08:50", "dias": " X X   " }], "personal": "000950952", "nombre_docente": "YOCAS EL CI", "mod_lab": null, "mod_practica": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "mod_trabajo": null }, { "seccion": "N+", "modalidad": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "19:50", "horafinal": "20:40", "dias": " X X   " }], "personal": "000008017", "nombre_docente": "ALDO NTIAG", "mod_lab": null, "mod_practica": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "0656", "configuracion_labs": [{ "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "ADMINISTRACION DE EMPRESAS 1", "secciones": [{ "seccion": "O+", "modalidad": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "17:20", "horafinal": "18:10", "dias": "X X X  " }], "personal": "019990371", "nombre_docente": "BYRON IENTO", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "P ", "modalidad": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "19:00", "horafinal": "19:50", "dias": "X X X  " }], "personal": "019990371", "nombre_docente": "BYRON IENTO", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "Q+", "modalidad": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "19:50", "horafinal": "20:40", "dias": "X X X  " }], "personal": "019990371", "nombre_docente": "BYRON IENTO", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "Q-", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "19:50", "horafinal": "20:40", "dias": "X X X  " }], "personal": "000018384", "nombre_docente": "CESAR RODA", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "0702", "configuracion_labs": [{ "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "INGENIERIA ECONOMICA 2", "secciones": [{ "seccion": "N ", "modalidad": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "17:20", "horafinal": "18:10", "dias": " X X   " }], "personal": "000930996", "nombre_docente": "JOSE NZALE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "P ", "modalidad": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "18:10", "horafinal": "19:00", "dias": " X X   " }], "personal": "000930996", "nombre_docente": "JOSE NZALE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "0706", "configuracion_labs": [{ "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "PREPARACION Y EVALUACION DE PROYECTOS 1", "secciones": [{ "seccion": "A ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "09:50", "horafinal": "10:40", "dias": "X X X  " }], "personal": "000960442", "nombre_docente": "ALBA LOPE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "P ", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "19:00", "horafinal": "19:50", "dias": "X X X  " }], "personal": "020041030", "nombre_docente": "ALEJA LOPE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "0710", "configuracion_labs": [{ "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "PLANEAMIENTO", "secciones": [{ "seccion": "N ", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "18:10", "horafinal": "19:00", "dias": "X X X  " }], "personal": "020041030", "nombre_docente": "ALEJA LOPE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "Q ", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "19:00", "horafinal": "20:40", "dias": "   X   " }, { "horainicio": "19:50", "horafinal": "20:40", "dias": " X     " }], "personal": "020041030", "nombre_docente": "ALEJA LOPE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "0734", "configuracion_labs": [{ "tipo": 5, "nombre": "PRACTICA                                                                                            ", "tipo_docente": 0 }, { "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "ESTADISTICA 2", "secciones": [{ "seccion": "A ", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "08:00", "horafinal": "08:50", "dias": "XXXX   " }], "personal": "020150467", "nombre_docente": "MAYRA STILL", "mod_lab": null, "mod_practica": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "mod_trabajo": null }, { "seccion": "B ", "modalidad": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "09:00", "horafinal": "09:50", "dias": "XXXX   " }], "personal": "000008081", "nombre_docente": "EDWIN OROZC", "mod_lab": null, "mod_practica": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "mod_trabajo": null }, { "seccion": "P ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "16:30", "horafinal": "17:20", "dias": "XXXX   " }], "personal": "000950077", "nombre_docente": "MARIA ADILL", "mod_lab": null, "mod_practica": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "mod_trabajo": null }, { "seccion": "Q ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "17:20", "horafinal": "18:10", "dias": "XXXX   " }], "personal": "000950077", "nombre_docente": "MARIA ADILL", "mod_lab": null, "mod_practica": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": [{ "codigo": "0734", "tipo": 5, "nombreTipo": "PRACTICA", "secciones": [{ "seccion": "N ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "14:50", "horafinal": "15:40", "dias": "    X  " }], "personal": "020220861", "nombre_docente": "ALEJA Z MOY" }, { "seccion": "P ", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "16:30", "horafinal": "17:20", "dias": "    X  " }], "personal": "020220875", "nombre_docente": "KEILA REYE" }, { "seccion": "Q ", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "17:20", "horafinal": "18:10", "dias": "    X  " }], "personal": "020220875", "nombre_docente": "KEILA REYE" }], "misma_seccion_labs": 1, "misma_letra_inicial_labs": 0 }] }, { "codigo": "0774", "configuracion_labs": [{ "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }, { "tipo": 2, "nombre": "LABORATORIO                                                                                         ", "tipo_docente": 0 }], "nota_laboratorio": null, "nombre_curso": "SISTEMAS DE BASES DE DATOS 1", "secciones": [{ "seccion": "N ", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "17:20", "horafinal": "19:00", "dias": "X  X   " }], "personal": "020181550", "nombre_docente": "\u00c1LVAR ORALE", "mod_lab": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "0775", "configuracion_labs": [{ "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }, { "tipo": 2, "nombre": "LABORATORIO                                                                                         ", "tipo_docente": 0 }], "nota_laboratorio": null, "nombre_curso": "SISTEMAS DE BASES DE DATOS 2", "secciones": [{ "seccion": "B ", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "07:10", "horafinal": "08:50", "dias": "  X  X " }], "personal": "020140419", "nombre_docente": "LUIS \u00d3RZAN", "mod_lab": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": [{ "codigo": "0775", "tipo": 2, "nombreTipo": "LABORATORIO", "secciones": [{ "seccion": "A ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "19:00", "horafinal": "20:40", "dias": "  X    " }], "personal": "990013603", "nombre_docente": null }], "misma_seccion_labs": 1, "misma_letra_inicial_labs": 0 }] }, { "codigo": "0780", "configuracion_labs": [{ "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }, { "tipo": 2, "nombre": "LABORATORIO                                                                                         ", "tipo_docente": 0 }], "nota_laboratorio": null, "nombre_curso": "SOFTWARE AVANZADO", "secciones": [{ "seccion": "A ", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "07:10", "horafinal": "08:50", "dias": " X X   " }], "personal": "000018150", "nombre_docente": "EVERE RIGUE", "mod_lab": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "0781", "configuracion_labs": [{ "tipo": 2, "nombre": "LABORATORIO                                                                                         ", "tipo_docente": 0 }, { "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "ORGANIZACION DE LENGUAJES Y COMPILADORES 2", "secciones": [{ "seccion": "A ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "12:10", "horafinal": "13:50", "dias": "     X " }, { "horainicio": "07:10", "horafinal": "08:50", "dias": "X      " }], "personal": "000017270", "nombre_docente": "BAYRO LOPE", "mod_lab": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": [{ "codigo": "0781", "tipo": 2, "nombreTipo": "LABORATORIO", "secciones": [{ "seccion": "N ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "19:00", "horafinal": "20:40", "dias": "X      " }], "personal": "990013592", "nombre_docente": null }], "misma_seccion_labs": 1, "misma_letra_inicial_labs": 0 }] }, { "codigo": "0785", "configuracion_labs": [{ "tipo": 2, "nombre": "LABORATORIO                                                                                         ", "tipo_docente": 0 }, { "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "ANALISIS Y DISE\\O DE SISTEMAS 2", "secciones": [{ "seccion": "A ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "19:00", "horafinal": "20:40", "dias": "X      " }, { "horainicio": "07:10", "horafinal": "08:50", "dias": " X     " }], "personal": "000970627", "nombre_docente": "CLAUD ORALE", "mod_lab": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "0787", "configuracion_labs": [{ "tipo": 2, "nombre": "LABORATORIO                                                                                         ", "tipo_docente": 0 }, { "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "SISTEMAS ORGANIZACIONALES Y GERENCIALES 2", "secciones": [{ "seccion": "A-", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "19:00", "horafinal": "20:40", "dias": " X X   " }], "personal": "020080090", "nombre_docente": "MARIO UENTE", "mod_lab": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "0799", "configuracion_labs": [{ "tipo": 5, "nombre": "PRACTICA                                                                                            ", "tipo_docente": 1 }, { "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "SEMINARIO DE INVESTIGACION", "secciones": [{ "seccion": "A ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "07:10", "horafinal": "08:50", "dias": "  X    " }], "personal": "000015122", "nombre_docente": "CARLO ORALE", "mod_lab": null, "mod_practica": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "mod_trabajo": null }, { "seccion": "B ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "07:10", "horafinal": "08:50", "dias": "  X    " }], "personal": "000970146", "nombre_docente": "EDGAR SUTU", "mod_lab": null, "mod_practica": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "0970", "configuracion_labs": [{ "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }, { "tipo": 2, "nombre": "LABORATORIO                                                                                         ", "tipo_docente": 0 }], "nota_laboratorio": null, "nombre_curso": "REDES DE COMPUTADORAS 1", "secciones": [{ "seccion": "N ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "14:00", "horafinal": "17:20", "dias": "     X " }], "personal": "020040256", "nombre_docente": "PEDRO AMIRE", "mod_lab": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": [{ "codigo": "0970", "tipo": 2, "nombreTipo": "LABORATORIO", "secciones": [{ "seccion": "N ", "modalidad": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "17:20", "horafinal": "19:00", "dias": "    X  " }], "personal": "990013579", "nombre_docente": null }], "misma_seccion_labs": 1, "misma_letra_inicial_labs": 0 }] }, { "codigo": "2009", "configuracion_labs": [{ "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "PRACTICAS FINALES INGENIERIA CIENCIAS Y SISTEMAS", "secciones": [{ "seccion": "C ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "20:40", "horafinal": "21:30", "dias": "  X    " }], "personal": "000017982", "nombre_docente": "FLORI INILL", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "2036", "configuracion_labs": [{ "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "PRACTICAS INTERMEDIAS", "secciones": [{ "seccion": "A+", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "09:50", "horafinal": "11:30", "dias": " X     " }], "personal": "000008929", "nombre_docente": "OSCAR NANDE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "A-", "modalidad": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "09:50", "horafinal": "11:30", "dias": " X     " }], "personal": "000013323", "nombre_docente": "SILVI ERRAN", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "B ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "10:40", "horafinal": "12:20", "dias": "  X    " }], "personal": "000017982", "nombre_docente": "FLORI INILL", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "C ", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "09:00", "horafinal": "10:40", "dias": " X     " }], "personal": "000950952", "nombre_docente": "YOCAS EL CI", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "D ", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "10:40", "horafinal": "12:20", "dias": "    X  " }], "personal": "000014999", "nombre_docente": "SERGI BRAV", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "M ", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "14:00", "horafinal": "15:40", "dias": " X     " }], "personal": "000018326", "nombre_docente": "EDWIN ZEPED", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "P ", "modalidad": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "14:00", "horafinal": "15:40", "dias": " X     " }], "personal": "000013328", "nombre_docente": "MANUE CHAET", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "R ", "modalidad": "Modalidad h\u00edbrida (tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "17:20", "horafinal": "19:00", "dias": " X     " }], "personal": "020011063", "nombre_docente": "LOREN ABRER", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "S ", "modalidad": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "18:10", "horafinal": "19:50", "dias": " X     " }], "personal": "020181466", "nombre_docente": "DIEGO ODINE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "T ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "18:10", "horafinal": "19:50", "dias": " X     " }], "personal": "020010766", "nombre_docente": "EDWIN REYE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "3123", "configuracion_labs": [{ "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "MATEMATICA APLICADA 5 (DIPLOMADO)", "secciones": [{ "seccion": "A ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "07:10", "horafinal": "08:00", "dias": "X X X  " }], "personal": "020030818", "nombre_docente": "LUIS MENDE", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }, { "seccion": "N ", "modalidad": "Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)", "horarios": [{ "horainicio": "16:30", "horafinal": "17:20", "dias": "X X X  " }], "personal": "000011106", "nombre_docente": "JOSE NASTU", "mod_lab": null, "mod_practica": null, "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }, { "codigo": "7999", "configuracion_labs": [{ "tipo": 5, "nombre": "PRACTICA                                                                                            ", "tipo_docente": 1 }, { "tipo": 1, "nombre": "CLASE MAGISTRAL                                                                                     ", "tipo_docente": 1 }], "nota_laboratorio": null, "nombre_curso": "SEMINARIO DE INVESTIGACION E.P.S. SISTEMAS", "secciones": [{ "seccion": "R ", "modalidad": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "horarios": [{ "horainicio": "09:00", "horafinal": "10:40", "dias": " X     " }], "personal": "000017982", "nombre_docente": "FLORI INILL", "mod_lab": null, "mod_practica": "Modalidad virtual (Todas las actividades son en l\u00ednea, soporte de UEDI)", "mod_trabajo": null }], "tipo": 1, "seccion_laboratorio": null }
+    ];
+    let cursosSeleccionados = []
+    let cursos_mostrados = []
+  </script>
+  <script src="./estilos/retorno-a-clases.js"></script>
+  <script src="./estilos/vendor.min.js"></script>
+  <script src="./estilos/app.min.js"></script>
+</body>
+
+</html>

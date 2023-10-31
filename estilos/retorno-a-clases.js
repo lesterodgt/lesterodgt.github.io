@@ -26,102 +26,34 @@ $(document).ready(function ($) {
     }
   })
 
-  $('input[name=p-manual]').change(() => {
-    cursosSeleccionados = []
-    cursos_mostrados = []
-    if ($('#p-manual-1').is(':checked')) {
-      $('#div-preguntas').empty().append(`
+  $('input[name=p-cursos-semestre]').change(() => {
+    if ($('#p-cursos-semestre-1').is(':checked')) {
+      $('#div-manual').empty().append(`
         <div class="card">
           <div class="card-body">
-            <h5>2. ¿Cómo desearía recibir los cursos que estima se asignará durante el primer semestre de 2024? (puede elegir varias opciones)</h5>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="p-modalidad-v" name="p-modalidad-v" value="2" required>
-              <label class="custom-control-label" for="p-modalidad-v">
-                Modalidad virtual (Todas las actividades son en línea, soporte de UEDI)
-              </label>
-            </div>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="p-modalidad-p" name="p-modalidad-p" value="2" required>
-              <label class="custom-control-label" for="p-modalidad-p">
-                Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)
-              </label>
-            </div>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="p-modalidad-h" name="p-modalidad-h" value="3" required>
-              <label class="custom-control-label" for="p-modalidad-h">
-                Modalidad híbrida (Clases teóricas virtuales, laboratorios, prácticas presenciales; tareas y control de notas en UEDI)
-              </label>
+            <h5>1. ¿Conoce el Normativo para la educación a distancia, híbrida o presencial?</h5><br>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="p-manual" id="p-manual-1" value="1" required>
+              <label class="form-check-label" for="p-manual-1">Si</label>
+            </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="p-manual" id="p-manual-2" value="0" required>
+              <label class="form-check-label" for="p-manual-2">No</label>
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-body">
-            <h5>
-              3. ¿De acuerdo con el grado de avance en su carrera qué cursos y en qué horario piensa 
-              asignarse en modalidad virtual o híbrida durante el primer semestre de 2024?
-            </h5>
-            ${preguntaCursos()}
-          </div>
-        </div>
-        <div id="div-movilidad"></div>
-        <div id="div-horario"></div>
-        <div class="card">
-          <div class="card-body">
-            <h5>6. Seleccione las tres principales razones por las que eligió la modalidad principal de estudios para recibir los cursos:<h5>
-            ${preguntaRazon()}
-          </div>
-        </div>
-        <input type="submit" id='btn-confirmar' value="Enviar" class="btn btn-primary">
       `)
 
-      $('#p-modalidad-v').change(() => {
-        verificarObligacionModalidad()
+      $('input[name=p-manual]').change(()=>{
+        preguntaNormativo()
+        $('#p-listado-cursos').select2()
       })
-
-      $('#p-modalidad-p').change(() => {
-        verificarObligacionModalidad()
-        if ($('#p-modalidad-p').is(':checked') && !!!existeMovilidad) {
-          preguntaMovilidad()
-          preguntaHorario()
-          existeMovilidad = true
-        } else {
-          if (!!!$('#p-modalidad-h').is(':checked')) {
-            $('#div-movilidad').empty()
-            $('#div-horario').empty()
-            existeMovilidad = false
-          }
-        }
-      })
-
-      $('#p-modalidad-h').change(() => {
-        verificarObligacionModalidad()
-        if ($('#p-modalidad-h').is(':checked') && !!!existeMovilidad) {
-          preguntaMovilidad()
-          preguntaHorario()
-          existeMovilidad = true
-        } else {
-          if (!!!$('#p-modalidad-p').is(':checked')) {
-            $('#div-movilidad').empty()
-            $('#div-horario').empty()
-            existeMovilidad = false
-          }
-        }
-      })
-
-      $('.razon').on('change', () => {
-        verificarObligacionMotivo()
-      })
-
-      $('#p-listado-cursos').select2()
 
     } else {
-      $('#div-preguntas').empty().append(`
-        <div class="card">
-          <div class="card-body">
-            Leer el manual
-          </div>
-        </div>
+      $('#div-manual').empty().append(`
+        <input type="submit" id='btn-confirmar' value="Enviar" class="btn btn-primary">
       `)
+      $('#div-preguntas').empty()
     }
   })
 
@@ -129,15 +61,105 @@ $(document).ready(function ($) {
 
 $(document).on('change', '.chck-curso', function () {
   let curso = $(this).val().split('%')
-  if ($(this).is(':checked')) {
-    cursosSeleccionados.push({ curso: curso[1], seccion: curso[2], tipo_seccion: curso[0] })
-    $(`.${curso[0]}-${curso[1]}`).prop('disabled', true)
-    $(`#${curso[0]}-${curso[1]}-${curso[2].substring(1, 2) == '+' ? curso[2].substring(0, 1) + '4' : curso[2]}`).prop('disabled', false)
-  } else {
-    cursosSeleccionados = cursosSeleccionados.filter((v) => !!!(v.tipo_seccion == curso[0] && v.curso == curso[1] && v.seccion == curso[2]))
-    $(`.${curso[0]}-${curso[1]}`).prop('disabled', false)
-  }
+  cursosSeleccionados = cursosSeleccionados.filter(e => !!!(e.curso == curso[1] && e.tipo_seccion == curso[0]))
+  cursosSeleccionados.push({ curso: curso[1], seccion: curso[2], tipo_seccion: curso[0] })
 });
+
+const preguntaNormativo = () =>{
+  cursosSeleccionados = []
+  cursos_mostrados = []
+  if ($('#p-manual-1').is(':checked')) {
+    $('#div-preguntas').empty().append(`
+      <div class="card">
+        <div class="card-body">
+          <h5>2. ¿Cómo desearía recibir los cursos que estima se asignará durante el primer semestre de 2024? (puede elegir varias opciones)</h5>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="p-modalidad-v" name="p-modalidad-v" value="2" required>
+            <label class="custom-control-label" for="p-modalidad-v">
+              Modalidad virtual (Todas las actividades son en línea, soporte de UEDI)
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="p-modalidad-p" name="p-modalidad-p" value="2" required>
+            <label class="custom-control-label" for="p-modalidad-p">
+              Modalidad presencial (Todas las actividades presenciales, tareas y control de notas en UEDI)
+            </label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="p-modalidad-h" name="p-modalidad-h" value="3" required>
+            <label class="custom-control-label" for="p-modalidad-h">
+              Modalidad híbrida (Clases teóricas virtuales, laboratorios, prácticas presenciales; tareas y control de notas en UEDI)
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h5>
+            3. ¿De acuerdo con el grado de avance en su carrera qué cursos y en qué horario le interesaría asignarse durante el primer semestre de 2024?
+          </h5>
+          ${preguntaCursos()}
+        </div>
+      </div>
+      <div id="div-movilidad"></div>
+      <div id="div-horario"></div>
+      <div class="card">
+        <div class="card-body">
+          <h5>6. Seleccione las tres principales razones por las que eligió la modalidad de estudios para recibir los cursos:<h5>
+          ${preguntaRazon()}
+        </div>
+      </div>
+      <input type="submit" id='btn-confirmar' value="Enviar" class="btn btn-primary">
+    `)
+
+    $('#p-modalidad-v').change(() => {
+      verificarObligacionModalidad()
+    })
+
+    $('#p-modalidad-p').change(() => {
+      verificarObligacionModalidad()
+      if ($('#p-modalidad-p').is(':checked') && !!!existeMovilidad) {
+        preguntaMovilidad()
+        preguntaHorario()
+        existeMovilidad = true
+      } else {
+        if (!!!$('#p-modalidad-h').is(':checked')) {
+          $('#div-movilidad').empty()
+          $('#div-horario').empty()
+          existeMovilidad = false
+        }
+      }
+    })
+
+    $('#p-modalidad-h').change(() => {
+      verificarObligacionModalidad()
+      if ($('#p-modalidad-h').is(':checked') && !!!existeMovilidad) {
+        preguntaMovilidad()
+        preguntaHorario()
+        existeMovilidad = true
+      } else {
+        if (!!!$('#p-modalidad-p').is(':checked')) {
+          $('#div-movilidad').empty()
+          $('#div-horario').empty()
+          existeMovilidad = false
+        }
+      }
+    })
+
+    $('.razon').on('change', () => {
+      verificarObligacionMotivo()
+    })
+    
+  } else {
+    $('#div-preguntas').empty().append(`
+      <div class="card">
+        <div class="card-body">
+          Leer el manual
+        </div>
+      </div>
+    `)
+  }
+}
 
 const preguntaCursos = () => {
   let options = ''
@@ -160,15 +182,23 @@ const preguntaCursos = () => {
 function agregarCurso() {
   let curso = JSON.parse($('#p-listado-cursos option:selected').val())
   if (!!!(cursos_mostrados.find((e) => e === curso.codigo))) {
+    let configuraciones = []
+    curso.configuracion_labs.forEach(conf =>{
+      if(conf.tipo!=1 && conf.tipo_docente == 0){
+        configuraciones.push(conf)
+      }
+    })
     cursos_mostrados.push(curso.codigo)
     let laboratorio = ''
     if (curso.seccion_laboratorio && curso.seccion_laboratorio.length > 0) {
-      laboratorio = `
-            <h6>${curso.seccion_laboratorio[0].nombreTipo}</h6>
-            ${generarTabla(curso.seccion_laboratorio[0])}
+      curso.seccion_laboratorio.forEach( lab => {
+        laboratorio = `${laboratorio}
+            <h6>${lab.nombreTipo}</h6>
+            ${generarTabla(lab, true, configuraciones)}
           `
+      })
     }
-    $('#div-cursos').append(`
+    $('#div-cursos').prepend(`
       <div class="card bg-light" id="${curso.codigo}">
         <div class="card-header">
           <div class="form-group row">
@@ -182,7 +212,7 @@ function agregarCurso() {
         </div>
         <div class="card-body">
           <h6>CLASE MAGISTRAL</h6>
-          ${generarTabla(curso)}
+          ${generarTabla(curso, false, configuraciones)}
           ${laboratorio}
         </div>
       </div>
@@ -196,10 +226,15 @@ function quitarCurso(curso) {
   $(`#${curso}`).remove()
 }
 
-const generarTabla = (curso) => {
+const generarTabla = (curso, esLab, conf) => {
+  let addModalidad = !!!(esLab && conf.length > 0)
   filas = '';
+  let modalidades = ''
+  if(!!!esLab && conf.length > 0){
+    modalidades = generarEncabezadoModalidad(conf)
+  }
   curso.secciones.forEach(seccion => {
-    filas = `${filas} ${generarFila(curso.codigo, seccion, curso.tipo)}`
+    filas = `${filas} ${generarFila(curso.codigo, seccion, curso.tipo, addModalidad, conf)}`
   });
   return `
     <table class="table table-bordered">
@@ -210,7 +245,8 @@ const generarTabla = (curso) => {
           <th scope="col">Inicio</th>
           <th scope="col">Fin</th>
           <th scope="col">Días</th>
-          <th scope="col">Modalidad</th>
+          ${addModalidad?'<th scope="col">Modalidad</th>':''}
+          ${modalidades}
           <th scope="col">Marcar</th>
         </tr>
       </thead>
@@ -219,7 +255,41 @@ const generarTabla = (curso) => {
   `
 }
 
-const generarFila = (codCurso, seccion, tipo) => {
+const generarEncabezadoModalidad = (clases) => {
+  let encabezados = ''
+  clases.forEach((c)=>{
+    encabezados = `${encabezados}
+      <th scope="col">Modalidad ${c.nombre}</th>
+    `
+  })
+  return encabezados
+}
+
+const generarFilaModalidad = (clases, rowspan) => {
+  let filas = ''
+  clases.forEach((c)=>{
+    filas = `${filas}
+      <td ${rowspan}>${c.modalidad}</td>
+    `
+  })
+  return filas
+}
+
+const generarFila = (codCurso, seccion, tipo, addModalidad, clases) => {
+  console.log(tipo);
+  console.log(clases);
+  console.log(seccion);
+  console.log(addModalidad);
+  if(tipo == 1 && clases.length > 0){
+    clases.forEach( (c, k) => {
+      switch (c.tipo) {
+        case 2: clases[k].modalidad = seccion.mod_lab; break;
+        case 3: clases[k].modalidad = seccion.mod_trabajo; break;
+        case 5: clases[k].modalidad = seccion.mod_practica; break;
+        default: clases[k].modalidad = seccion.modalidad; break;
+      }
+    });
+  }
   let horarios = seccion.horarios;
   let rowspan = horarios.length > 1 ? `rowspan="${horarios.length}"` : '';
   let celdas = '';
@@ -229,6 +299,11 @@ const generarFila = (codCurso, seccion, tipo) => {
     });
   }
   let secc = seccion.seccion.trim()
+  let filasModalidad = ''
+  if(tipo == 1 && clases.length > 0){
+    filasModalidad = generarFilaModalidad(clases, rowspan)
+  }
+  
   return `
     <tr>
       <td ${rowspan}>${seccion.nombre_docente}</td>
@@ -236,12 +311,18 @@ const generarFila = (codCurso, seccion, tipo) => {
       <td>${horarios[0].horainicio}</td>
       <td>${horarios[0].horafinal}</td>
       <td>${convertirDias(horarios[0].dias)}</td>
-      <td ${rowspan}>${seccion.modalidad}</td>
+      ${ addModalidad ? `<td ${rowspan}>${seccion.modalidad}</td>` : ''}
+      ${ filasModalidad }
       <td ${rowspan} class="align-items-center">
-        <div class="form-check text-center">
-          <input class="form-check-input position-static chck-curso ${tipo}-${codCurso}" type="checkbox" 
-            id="${tipo}-${codCurso}-${secc.substring(1, 2) == '+' ? secc.substring(0, 1) + '4' : secc}" 
-            value="${tipo}%${codCurso}%${secc}" aria-label="..."
+        <div class="custom-control custom-radio text-center">
+          <input 
+            class="form-check-input position-static chck-curso ${tipo}-${codCurso}"
+            type="radio"
+            name="${tipo}-${codCurso}"
+            id="${tipo}-${codCurso}-${secc.substring(1, 2) == '+' ? secc.substring(0, 1) + '4' : secc}"
+            value="${tipo}%${codCurso}%${secc}"
+            aria-label="..."
+            required
           >
         </div>
       </td>
@@ -359,7 +440,8 @@ const preguntaRazon = () => {
   let checks = '';
   let arreglo = ['Participación en clase', 'Interacción con los compañeros', 'Posibilidad de trabajar y estudiar',
     'Optimización del tiempo', 'Aprovechamiento de la tecnología', 'Mayor interacción con los profesores',
-    'Mejor calidad de la información', 'Se evitan congestiones de tráfico', 'Acceso desde lugares distantes', 'Laboratorios y prácticas'];
+    'Mejor calidad de la información', 'Se evitan congestiones de tráfico', 'Acceso desde lugares distantes', 'Laboratorios y prácticas'
+  ];
   arreglo.forEach((e, k) => {
     checks = `${checks} ${generarCheckBox('6', k, k + 23, e, 'razon', true)}`
   });
